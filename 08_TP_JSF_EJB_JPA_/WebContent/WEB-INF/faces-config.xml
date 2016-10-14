@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<application>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>fr_FR</default-locale>
+			<supported-locale>en_US</supported-locale>
+			<supported-locale>fr_FR</supported-locale>
+		</locale-config>
+	</application>
+
+	<navigation-rule>
+		<from-view-id>login.xhtml</from-view-id>
+
+		<navigation-case>
+			<from-outcome>succes</from-outcome>
+			<to-view-id>/accueil.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>fail</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>accueil.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>afficher</from-outcome>
+			<to-view-id>/accueil.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>ajouter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>afficher</from-outcome>
+			<to-view-id>/accueil.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>supprimer.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>afficher</from-outcome>
+			<to-view-id>/accueil.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>#</from-outcome>
+			<to-view-id>/supprimer.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>modifier.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>afficher</from-outcome>
+			<to-view-id>/accueil.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>#</from-outcome>
+			<to-view-id>/modifier.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>deconnexion.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>deco</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>nodeco</from-outcome>
+			<to-view-id>/accueil.xhtml</to-view-id>
+		</navigation-case>
+
+
+	</navigation-rule>
+
+</faces-config>

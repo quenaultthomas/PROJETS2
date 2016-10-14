@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:login.xhtml" PATH="login.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:login.xhtml:0" NAME="item" PATH="login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="succes::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="succes" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="fail::#login.xhtml" NAME="output1"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="fail" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#accueil.xhtml" PATH="/accueil.xhtml"
+  SHAPE="256,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml"
+  SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:ajouter.xhtml" PATH="ajouter.xhtml"
+  SHAPE="32,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:ajouter.xhtml:0" NAME="item"
+   PATH="ajouter.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="afficher::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="afficher" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:supprimer.xhtml" PATH="supprimer.xhtml"
+  SHAPE="32,497,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:supprimer.xhtml:0" NAME="item"
+   PATH="supprimer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="afficher::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="afficher" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="#::#supprimer.xhtml" NAME="output1"
+    PATH="/supprimer.xhtml" TARGET="rules:#supprimer.xhtml" TITLE="#" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:modifier.xhtml" PATH="modifier.xhtml"
+  SHAPE="32,641,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:modifier.xhtml:0" NAME="item"
+   PATH="modifier.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="afficher::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="afficher" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="#::#modifier.xhtml" NAME="output1"
+    PATH="/modifier.xhtml" TARGET="rules:#modifier.xhtml" TITLE="#" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:deconnexion.xhtml" PATH="deconnexion.xhtml"
+  SHAPE="32,785,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:deconnexion.xhtml:0" NAME="item"
+   PATH="deconnexion.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="deco::#login.xhtml" NAME="output"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="deco" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="nodeco::#accueil.xhtml" NAME="output1"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="nodeco" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#supprimer.xhtml" PATH="/supprimer.xhtml"
+  SHAPE="304,513,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#modifier.xhtml" PATH="/modifier.xhtml"
+  SHAPE="304,657,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:accueil.xhtml" PATH="accueil.xhtml"
+  SHAPE="32,1041,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:accueil.xhtml:0" NAME="item"
+   PATH="accueil.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="afficher::#accueil.xhtml" NAME="output"
+    PATH="/accueil.xhtml" TARGET="rules:#accueil.xhtml" TITLE="afficher" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

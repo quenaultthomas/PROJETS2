@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view locale="#{languageBean.local}"></f:view>
+
+<h:head>
+	<title></title>
+</h:head>
+<h:body>
+
+
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem value="#{msg.acc}" action="accueil" />
+			<p:menuitem value="#{msg.addUser}" action="ajouter" />
+			<p:menuitem value="#{msg.updateUser}" action="#" />
+			<p:menuitem value="#{msg.deleteUser}" action="supprimer" />
+			<p:menuitem value="#{msg.disconnect}" action="#deconnexion" />
+		</p:breadCrumb>
+	</h:form>
+
+	<h:form>
+#{msg.language}
+		<h:selectOneMenu value="#{languageBean.localCode}" onchange="submit()"
+			valueChangeListener="#{languageBean.changerLoc}">
+			<f:selectItems value="#{languageBean.localites}" />
+		</h:selectOneMenu>
+	</h:form>
+	
+	
+	<div align="center">
+		<h:form>
+			<p:growl id="growl" showDetail="true" sticky="true" />
+			<h:panelGrid columns="3">
+			#{msg.id} : 
+		<h:inputText id="idId" value="#{userMB.users.id_user}" label="Id"
+					required="true" maxlength="20"></h:inputText>
+				<h:message for="idId" style="color:red"></h:message>
+				<h:commandButton value="Rechercher" action="#{userMB.rechercher}"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+
+		<p:dataTable var="users" value="#{userMB.users}">
+			<p:column headerText="Id">
+				<h:outputText value="#{users.id_user}" />
+			</p:column>
+
+			<p:column headerText="#{msg.name}">
+				<h:outputText value="#{users.nom}" />
+			</p:column>
+
+			<p:column headerText="#{msg.dateB}">
+				<h:outputText value="#{users.date}" />
+			</p:column>
+
+		</p:dataTable>
+	</div>
+
+	<div align="center">
+		<h:messages style="color:red;margin:30px"></h:messages>
+
+		<h:form>
+			<h:panelGrid columns="3">
+
+		#{msg.name}: 
+		<h:inputText id="nomId" value="#{userMB.users.nom}" label="Nom"
+					required="true" maxlength="20"></h:inputText>
+				<h:message for="nomId" style="color:red"></h:message>
+
+				
+		#{msg.dateB} : 
+        <p:calendar id="dateId" value="#{userMB.users.date}" />
+				<h:message for="dateId" style="color:red"></h:message>
+
+
+				<h:commandButton value="#{msg.update}" action="#{userMB.modifier}"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+	</div>
+
+</h:body>
+
+</html>

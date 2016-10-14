@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view locale="#{languageBean.local}"></f:view>
+
+<h:head>
+	<title></title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem value="#{msg.acc}" action="accueil" />
+			<p:menuitem value="#{msg.addUser}" action="#" />
+			<p:menuitem value="#{msg.updateUser}" action="modifier" />
+			<p:menuitem value="#{msg.deleteUser}" action="supprimer" />
+			<p:menuitem value="#{msg.disconnect}" action="deconnexion" />
+		</p:breadCrumb>
+	</h:form>
+
+	<h:form>
+#{msg.language}
+		<h:selectOneMenu value="#{languageBean.localCode}" onchange="submit()"
+			valueChangeListener="#{languageBean.changerLoc}">
+			<f:selectItems value="#{languageBean.localites}" />
+		</h:selectOneMenu>
+	</h:form>
+
+	<div align="center">
+
+
+		<h:form>
+			<h:panelGrid columns="3">
+
+		#{msg.name} : 
+		<p:inputText id="nomId" value="#{userMB.users.nom}" label="Nom"
+					required="true"></p:inputText>
+				<h:message for="nomId" style="color:red"></h:message>
+
+				
+		#{msg.dateB} : 
+        <p:calendar id="dateId" value="#{userMB.users.date}" />
+				<h:message for="dateId" style="color:red"></h:message>
+
+
+				<h:commandButton value="#{msg.addUser}" action="#{userMB.ajouter}"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+	</div>
+
+
+</h:body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title></title>
+</h:head>
+<h:body>
+
+	<h:form>
+#{msg.language}
+		<h:selectOneMenu value="#{languageBean.localCode}" onchange="submit()"
+			valueChangeListener="#{languageBean.changerLoc}">
+			<f:selectItems value="#{languageBean.localites}" />
+		</h:selectOneMenu>
+	</h:form>
+	
+	<h1 align="center">#{msg.connecter}</h1>
+	<div align="center">
+	
+		<h:form>
+		<p:growl id="growl" showDetail="true" sticky="true" />
+			<h:panelGrid columns="3">
+				
+		#{msg.mail} : 
+		<h:inputText id="mailId" value="#{agentMB.mail}" label="Mail"
+					required="true">
+					
+				</h:inputText>
+				<h:message for="mailId" style="color:red"></h:message>
+
+			
+		#{msg.password} : 
+		<h:inputSecret id="mdpId" value="#{agentMB.mdp}" label="Mdp"
+					required="true"></h:inputSecret>
+				<h:message for="mdpId" style="color:red"></h:message>
+				<h:commandButton value="connexion" action="#{agentMB.isExist()}"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+	</div>
+</h:body>
+</html>
